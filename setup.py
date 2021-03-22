@@ -1,9 +1,9 @@
 name = "vector3d"
-v = "1.0.0"
+v = "1.2.0"
 author = "Cyrmax"
 email = "bkm.grotschool@yandex.ru"
 description = "Vector3D is a small package for processing 3D vector in decartian system and some vector-related function, such as distance between two points, angle between vectors, ETC"
-url = "https://github.com/kirill-belousov/vector3d"
+url = "https://github.com/jentron/vector3d"
 
 import setuptools
 

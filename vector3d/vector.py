@@ -28,6 +28,10 @@ class Vector:
 		if type(o) is Vector: return ((self.x * o.x) + (self.y * o.y) + (self.z * o.z))
 		else: return Vector(self.x * o, self.y * o, self.z * o)
 	
+	def __truediv__(self, o):
+		if type(o) is Vector: return ((self.x / o.x) + (self.y / o.y) + (self.z / o.z))
+		else: return Vector(self.x / o, self.y / o, self.z / o)
+	
 	def __iadd__(self, o):
 		self.x += o.x
 		self.y += o.y
@@ -42,12 +46,19 @@ class Vector:
 	
 	def __neg__(self):
 		return Vector(-self.x, -self.y, -self.z)
-	
+
+	def __repr__(self):
+		return str(self.__dict__ )
+
+	def __str__(self):
+		return '<{}, {}, {}>'.format(self.x, self.y, self.z)
+
 	def length(self):
 		return sqrt(self.x*self.x + self.y*self.y + self.z*self.z)
 	
 	def normalize(self):
-		return Vector((self.x / self.length()), (self.y / self.length()), (self.z / self.length()))
+		m = self.length()
+		return Vector((self.x / m), (self.y / m), (self.z / m ))
 
 def from_points(a=Point(0,0,0), b=Point(0,0,0)):
 	return Vector(b.x - a.x, b.y - a.y, b.z - a.z)
